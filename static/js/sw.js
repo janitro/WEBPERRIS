@@ -1,12 +1,12 @@
-console.log('Started', self);
-self.addEventListener('install', function(event) {
-  self.skipWaiting();
-  console.log('Installed', event);
-});
-self.addEventListener('activate', function(event) {
-  console.log('Activated', event);
-});
-self.addEventListener('push', function(event) {
-  console.log('Push message received', event);
-  // TODO
-});
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('static/js/sw.js').then(function(registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }).catch(function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
