@@ -1,0 +1,30 @@
+{% include 'navbar.html' %}
+
+
+<h1 class="display-1 text-muted">Listado de perros</h1>
+<div class="table-responsive">
+<table class="table table-bordered table"></table>
+<thead class="thead-dark">
+        <tr>
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Edad</th>
+        <th>Estado</th>
+        <th>Descripcion</th>
+        <th>Foto</th>
+    </tr>
+    </thead>
+{%for p in posts%}
+<tr>
+    <br><td>{{p.nombre}}</td></br>
+    <td>{{p.raza}}</td>
+    <td>{{p.edad}}</td>
+    <td>{{p.estado}}</td>
+    <td>{{p.Descripcion}}</td>
+          
+    <img action="/media/perros/" src="{{p.Foto}}">
+    
+</tr>
+{%endfor%}
+</table>
+</div>
