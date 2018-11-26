@@ -23,7 +23,12 @@
     <button type="submit">Log in</button>
     <a href="{% url 'signup' %}">New to My Site? Sign up</a>
     <a href="{% url "social:begin" "google-oauth2" %}">Google+</a>
-    <a href="{% url "social:begin" "TwitterOAuth" %}">Twitter</a>
+    <a href="{% url "social:begin" "twitter" %}">Twitter</a>
+    <a href="{% url "social:begin" "github" %}">GitHub</a>
+    <a href="{% url "social:begin" "facebook" %}">Facebook</a>
+   
+
+
   </form>
 
 {% endblock %}
