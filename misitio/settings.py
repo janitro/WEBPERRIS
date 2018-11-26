@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+PWA_SERVICE_WORKER_PATH = os.path.join (BASE_DIR, '/static/js', 'sw.js')
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web',
+    'rest_framework',
+    'social_django',
+    'sslserver',
+    
 ]
 
 MIDDLEWARE = [
@@ -55,7 +59,7 @@ ROOT_URLCONF = 'misitio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,10 +67,27 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.open_id.OpenIdAuth',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.google.GoogleOAuth',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.yahoo.YahooOpenId',
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+
 
 WSGI_APPLICATION = 'misitio.wsgi.application'
 
@@ -129,3 +150,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '646501799908-ndgnnhdl86mqqo95mllpdgdbi4b84aun.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'FHd4-uC5MChvGA3b2ygqFL9l'
+SOCIAL_AUTH_GITHUB_KEY = '7999d11e81e4b6401eca'
+SOCIAL_AUTH_GITHUB_SECRET = '4b9fa92481e3dbce4b10ade87297739e84a09c86'
+SOCIAL_AUTH_FACEBOOK_KEY = '523356428143614'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ba03d86b751d951281a5df0d8c6f701e' 
+
+

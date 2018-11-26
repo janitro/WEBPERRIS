@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include 
+from django.conf.urls  import url,include
 from web import views
 from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
@@ -34,6 +35,8 @@ urlpatterns = [
     path('Mascota/', views.MascotaReg, name='Mascota'),
     path('Contacto/', views.ContactoReg, name='Contacto'),
     path('Perros/', views.Perros_list, name='Perros'),
+    url('social/', include('social_django.urls', namespace='social')),
+
 ]
 
 
