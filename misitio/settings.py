@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-PWA_SERVICE_WORKER_PATH = os.path.join (BASE_DIR, '/static/js', 'sw.js')
+#PWA_SERVICE_WORKER_PATH = os.path.join (BASE_DIR, '/static/js', 'sw.js')
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'social_django',
     'sslserver',
+    'pwa',
     
 ]
 
@@ -156,5 +157,23 @@ SOCIAL_AUTH_GITHUB_KEY = '7999d11e81e4b6401eca'
 SOCIAL_AUTH_GITHUB_SECRET = '4b9fa92481e3dbce4b10ade87297739e84a09c86'
 SOCIAL_AUTH_FACEBOOK_KEY = '523356428143614'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = 'ba03d86b751d951281a5df0d8c6f701e' 
+
+
+
+
+
+#PWA
+PWA_APP_NAME = 'Mis Perris'
+PWA_APP_DESCRIPTION = "Aplicacion Para Duoc UC"
+PWA_APP_THEME_COLOR = '#0A0302'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_START_URL = '/'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/images/misperris.png',
+        'sizes': '160x160'
+    }
+]
 
 

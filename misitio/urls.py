@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
@@ -36,6 +37,7 @@ urlpatterns = [
     path('Contacto/', views.ContactoReg, name='Contacto'),
     path('Perros/', views.Perros_list, name='Perros'),
     url('social/', include('social_django.urls', namespace='social')),
+    url ('', include ('pwa.urls')),
 
 ]
 
