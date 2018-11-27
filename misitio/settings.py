@@ -27,7 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#PWA_SERVICE_WORKER_PATH = os.path.join (BASE_DIR, '/static/js', 'sw.js')
+PWA_SERVICE_WORKER_PATH  = os.path.join ( BASE_DIR , 'static/js/' , 'serviceworker.js' )
+
+
 # Application definition
 
 INSTALLED_APPS = [
