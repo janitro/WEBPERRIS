@@ -7,4 +7,4 @@ from .models import Profile,Contacto,Mascota
 class MascotaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Mascota
-        fields = ('Nombre', 'Raza', 'Edad', 'Estado', 'Descripcion', 'Foto')
+        fields = ('id','Nombre', 'Raza', 'Edad', 'Estado', 'Descripcion', 'Foto')
