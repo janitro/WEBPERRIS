@@ -2,7 +2,9 @@ var CACHE_NAME = "misitio";
 var CACHED_URLS = [
   
   
-  "/static/images/misperris.png"
+  "/static/images/misperris.png",
+  "/templates/home.html"
+
  
 ]
 
@@ -47,7 +49,7 @@ self.addEventListener("fetch", function(event){
           }).catch(function(){ // if fetching from server fails
             // return copy from cache or offline page from cache
             return cache.match(event.request).then(function(response){
-              return response || cache.match("/polls/offline/");
+              return response || cache.match("/templates/home.html");
             });
           });
       })
@@ -70,7 +72,7 @@ self.addEventListener("fetch", function(event){
 
 self.addEventListener("message", function(event){
   if (event.data === "offline?"){ // check the message data
-    fetch("/polls/").catch(function(response){ // fetch from the network and if it fails
+    fetch("/templates/").catch(function(response){ // fetch from the network and if it fails
       self.clients.get(event.source.id).then(function(client){ // get the client that sent this message
         client.postMessage("offline"); // and send a confirmation message
       });
