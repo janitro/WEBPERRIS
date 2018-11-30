@@ -29,6 +29,10 @@ ALLOWED_HOSTS = []
 
 PWA_SERVICE_WORKER_PATH  = os.path.join ( BASE_DIR , 'static/js/' , 'serviceworker.js' )
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 # Application definition
 
@@ -148,7 +152,13 @@ STATICFILES_DIRS = [
     '/misitio/static/',
 ]
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "media"),
+    '/misitio/media/',
+]
+
+
 
 
 LOGIN_REDIRECT_URL = 'home'

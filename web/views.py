@@ -4,7 +4,11 @@ from django.shortcuts import render, redirect
 from web.forms import SignUpForm, MascotasForm,ContactoForm
 from web.models import Mascota,Contacto
 from django.contrib import messages
-
+from .serializers import MascotaSerializer
+from rest_framework import viewsets
+from rest_framework.renderers import TemplateHTMLRenderer
+from rest_framework.views import APIView
+from django.shortcuts import get_object_or_404
 
 
 def home(request):
@@ -92,3 +96,35 @@ def ContactoReg(request):
 def Perros_list(request):
     posts = Mascota.objects.all()
     return render(request, 'mascotasListar.html', {'posts': posts})
+
+
+
+class MascotaViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Mascota.objects.all()
+    serializer_class = MascotaSerializer
+
+
+
+# class MascotaDatail(APIView):
+#     renderer_classes = [TemplateHTMLRenderer]
+#     template_name = 'mascota3.html'
+
+#     def get(self, request, pk):
+#         mascota = get_object_or_404(Mascota, pk=pk)
+#         serializer = MascotaSerializer(mascota)
+#         return Response({'serializer': serializer, 'mascota': mascota})
+
+#     def post(self, request, pk):
+#         mascota = get_object_or_404(Mascota, pk=pk)
+#         serializer = MascotaSerializer(mascota, data=request.data)
+#         if not serializer.is_valid():
+#             return Response({'serializer': serializer, 'mascota': mascota})
+#         serializer.save()
+#         return redirect('Mascota-list')
+
+
+
+

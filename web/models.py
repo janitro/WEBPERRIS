@@ -38,7 +38,7 @@ class Mascota(models.Model):
     Estado = models.CharField(max_length=20,
     choices=ES_MASCOTA)
     Descripcion =  models.CharField(max_length=100)
-    Foto = models.ImageField(upload_to='Perros', null=True, blank=True)
+    Foto = models.ImageField(upload_to='media/',null=True, blank=True)
 
 
     def __str__(self):
