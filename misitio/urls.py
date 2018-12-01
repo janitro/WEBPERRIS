@@ -40,7 +40,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
     path('Mascota/', views.MascotaReg, name='Mascota'),
     path('Contacto/', views.ContactoReg, name='Contacto'),
-    path('Perros/', views.Perros_list, name='Perros'),
+    path('ListarPerros/', views.ListarPerros, name='ListarPerros'),
     url('social/', include('social_django.urls', namespace='social')),
     url ('', include ('pwa.urls')),
     url(r'^', include(router.urls)),

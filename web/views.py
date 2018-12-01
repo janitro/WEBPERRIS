@@ -9,7 +9,7 @@ from rest_framework import viewsets
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
-
+import requests
 
 def home(request):
     
@@ -93,9 +93,9 @@ def ContactoReg(request):
     })
 
 
-def Perros_list(request):
-    posts = Mascota.objects.all()
-    return render(request, 'mascotasListar.html', {'posts': posts})
+# def Perros_list(request):
+#     posts = Mascota.objects.all()
+#     return render(request, 'mascotasListar.html', {'posts': posts})
 
 
 
@@ -105,6 +105,16 @@ class MascotaViewSet(viewsets.ModelViewSet):
     """
     queryset = Mascota.objects.all()
     serializer_class = MascotaSerializer
+
+
+
+
+def ListarPerros(request):
+    response = requests.get('http://127.0.0.1:8000/Mascota2/')
+    listaperros = response.json()
+    return render(request, 'mascotasListar.html', {
+        'listaperros': listaperros
+    })
 
 
 

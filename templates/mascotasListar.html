@@ -14,18 +14,20 @@
         <th>Foto</th>
     </tr>
     </thead>
-{%for p in posts%}
-<tr>
-    <br><td>{{p.nombre}}</td></br>
-    <td>{{p.raza}}</td>
-    <td>{{p.edad}}</td>
-    <td>{{p.estado}}</td>
-    <td>{{p.Descripcion}}</td>
+
+    {{listaperros.results}}
+
+<!-- <tr>
+    <br><td>{{Nombre}}</td></br>
+    <td>{{Raza}}</td>
+    <td>{{Edad}}</td>
+    <td>{{Estado}}</td>
+    <td>{{Descripcion}}</td>
     
           
-    <img src="{{p.Foto}}">
+    <img src="{{Foto}}">
     
-</tr>
-{%endfor%}
+</tr> -->
+
 </table>
 </div>
