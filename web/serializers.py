@@ -14,3 +14,4 @@ class MascotaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mascota
         fields = ('Nombre', 'Raza', 'Edad', 'Estado', 'Descripcion', 'Foto')
+        

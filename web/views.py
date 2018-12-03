@@ -14,51 +14,6 @@ import requests
 from rest_framework.decorators import api_view
 
 
-@api_view(['GET', 'POST'])
-def perro_lista(request,):
-    """
-    List all code snippets, or create a new snippet.
-    """
-    if request.method == 'GET':
-        mascota = Mascota.objects.all()
-        serializer = MascotaSerializer(mascota, many=True)
-        return Response(serializer.data)
-
-    elif request.method == 'POST':
-        serializer = MascotaSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-@api_view(['GET', 'PUT', 'DELETE'])
-def perro_detail(request, pk):
-    """
-    Retrieve, update or delete a code snippet.
-    """
-    try:
-        mascota = Mascota.objects.get(pk=pk)
-    except Mascota.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
-
-    if request.method == 'GET':
-        serializer = MascotaSerializer(snippet)
-        return Response(serializer.data)
-
-    elif request.method == 'PUT':
-        serializer = MascotaSerializer(snippet, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    elif request.method == 'DELETE':
-        mascota.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-
-
 def home(request):
     
     return render(request,"home.html")
@@ -94,23 +49,6 @@ def signup(request):
 
 
 
-"""def MascotaReg(request):
-    
-    if request.method == 'POST':
-        form = MascotasForm(request.POST, request.FILES)
-        if form.is_valid():
-           mascota = form.save(commit=False)
-           mascota.username = request.user
-           mascota.save()
-           messages.success(request, 'Mascota Agregada')
-           return redirect('home')
-    else:
-       form = MascotasForm()
-       
-        
-    
-    return render(request, 'mascotas.html', {'form': form})"""
-
 def MascotaReg(request):
     if request.method == 'POST':
         form = MascotasForm(request.POST or None, request.FILES or None)
@@ -141,21 +79,6 @@ def ContactoReg(request):
     })
 
 
-# def Perros_list(request):
-#     posts = Mascota.objects.all()
-#     return render(request, 'mascotasListar.html', {'posts': posts})
-
-
-
-# class MascotaViewSet(viewsets.ModelViewSet):
-#     """
-#     API endpoint that allows users to be viewed or edited.
-#     """
-#     queryset = Mascota.objects.all()
-#     serializer_class = MascotaSerializer
-
-
-
 
 def ListarPerros(request):
     response = requests.get('http://127.0.0.1:8000/Listado/')
@@ -169,32 +92,28 @@ def ListarPerros(request):
         
         })
 
+
+
+
+
+
+def Prueba(request):
+    
+    return render(request,"prueba2.html") 
+
+
+
+
         
  
 
                
-       
          
    
 
 
 
-# class MascotaDatail(APIView):
-#     renderer_classes = [TemplateHTMLRenderer]
-#     template_name = 'mascota3.html'
 
-#     def get(self, request, pk):
-#         mascota = get_object_or_404(Mascota, pk=pk)
-#         serializer = MascotaSerializer(mascota)
-#         return Response({'serializer': serializer, 'mascota': mascota})
-
-#     def post(self, request, pk):
-#         mascota = get_object_or_404(Mascota, pk=pk)
-#         serializer = MascotaSerializer(mascota, data=request.data)
-#         if not serializer.is_valid():
-#             return Response({'serializer': serializer, 'mascota': mascota})
-#         serializer.save()
-#         return redirect('home')
 
 class Listado (generics.ListCreateAPIView):
     queryset = Mascota.objects.all()
@@ -212,13 +131,7 @@ class ListadoDetail (generics.RetrieveUpdateDestroyAPIView):
     queryset = Mascota.objects.all()
     serializer_class = MascotaSerializer
 
-class MascotaList(APIView):
-    renderer_classes = [TemplateHTMLRenderer]
-    template_name =    'mascota3.html'
 
-    def get(self, request):
-        queryset = Mascota.objects.all()
-        return Response({'listamascota': queryset})
 
 
 

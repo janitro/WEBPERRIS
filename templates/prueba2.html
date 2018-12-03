@@ -1,0 +1,50 @@
+{% load rest_framework %}
+
+<html><body>    
+<h1>New Person</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{serializer.Nombre}}
+    <input type="submit" value="Save">
+</form>
+
+</body></html>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">WebSiteName</a>
+      </div>
+     
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Inicio</a></li>
+        <li><a href="#">Quienes Somos</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="{% url 'Contacto' %}">Contactos</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="#">Adoptar</a></li>
+        {% endif %}
+        {% if user.is_superuser %}
+        <li><a href="{% url 'Mascota' %}">Resgistar Mascota</a></li>
+        <li><a href="{% url 'ListarPerros' %}">Ver Perros</a></li>
+        {% endif %}
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated  %}
+          <a href="{% url 'logout' %}"></a>
+          <li><a href=""><span class="glyphicon glyphicon-user"></span> {{ user.username }}</a></li>
+          <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+          {% else %}
+         
+  
+  
+        <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+  
+  
+        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
