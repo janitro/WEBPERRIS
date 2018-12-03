@@ -1,13 +1,8 @@
-{% load rest_framework %}
-
 <html><body>
-
-<h1>Profile - {{ mascota.name }}</h1>
-
-<form action="{% url 'mascota-detail' pk=mascota.pk %}" method="POST">
-    {% csrf_token %}
-    {% render_form serializer %}
-    <input type="submit" value="Save">
-</form>
-
-</body></html>
+    <h1>mascota</h1>
+    <ul>
+        {% for listamascota in listamascota %}
+        <li>{{ listamascota }}</li>
+        {% endfor %}
+    </ul>
+    </body></html>

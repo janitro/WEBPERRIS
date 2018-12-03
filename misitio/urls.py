@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include 
 from django.conf.urls  import url,include
-from web import views
+from web import views,urls
 from django.contrib.auth import login
 from django.contrib.auth import views as auth_views
 from django.conf import settings
@@ -24,8 +24,11 @@ from django.conf.urls.static import static
 from rest_framework import routers
 from rest_framework.urlpatterns import format_suffix_patterns
 
-router = routers.DefaultRouter()
-router.register(r'Mascota2', views.MascotaViewSet) 
+
+
+# router = routers.DefaultRouter()
+# router.register(r'Mascota2', views.MascotaViewSet) 
+
 
 
 
@@ -43,9 +46,14 @@ urlpatterns = [
     path('ListarPerros/', views.ListarPerros, name='ListarPerros'),
     url('social/', include('social_django.urls', namespace='social')),
     url ('', include ('pwa.urls')),
-    url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-    # path('mascota3/<int:pk>/', views.MascotaDatail.as_view())
+    # url(r'^', include(router.urls)),
+    # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    
+    
+    url(r'^', include('web.urls')),
+    
+
+    
 
 ]
 

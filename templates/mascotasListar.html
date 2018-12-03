@@ -14,8 +14,13 @@
         <th>Foto</th>
     </tr>
     </thead>
-
-    {{listaperros.results}}
+    {% for results in results %}
+    <li>   {{results.Nombre}}</li>
+    <li>   {{results.Raza}}</li>
+    {% endfor %}
+   
+ 
+    
 
 <!-- <tr>
     <br><td>{{Nombre}}</td></br>
