@@ -2,5 +2,153 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2> Welcome, {{ user.username }}!</h2>
+{% load static %}
+  <div class="contenedor-principal">
+      <div class="carousel-container">
+        <div id="carouselImg" class="carousel slide carrusel" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselImg" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselImg" data-slide-to="1"></li>
+            <li data-target="#carouselImg" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active" id="img1">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="declaracion">"A Apolo le encanta salir de viaje con nosotros. Estamos super felices con el"</h5>
+              </div>
+            </div>
+            <div class="carousel-item" id="img2">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="declaracion">"Duque es super aventurero al igual que yo. Cada semana vamos a un lugar nuevo"</h5>
+              </div>
+            </div>
+            <div class="carousel-item" id="img3">
+              <div class="carousel-caption">
+                <h5 class="declaracion">
+                  "Estamos felices de tener a Tom en casa. 
+                  Es un super fiel compañero"
+                </h5>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselImg" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselImg" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div class="informacion">
+          <div class="row">
+            <div class="col numero">
+              <h5><b>+ 56 9 98765431</b></h5>
+            </div>
+            <div class="col-6 text-center slogan">
+              <h5><strong>Rescate y adopción de perros callejeros</strong></h5>
+            </div>
+            <div class="col rrss text-center ">
+              <span class="face" ><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f" ></i></span></a>
+              <span class="gplus"><a href="https://www.google.com" target="_blank"><i class="fab fa-google-plus-g"></i></span></a>
+              <span class="insta"><a href="https://www.instagram.com"target="_blank"><i class="fab fa-instagram"></i></span></a>
+              <span class="mensaje"><a href="https://www.gmail.com"  target="_blank"><i class="far fa-envelope"></i></span></a>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row contenido">
+      <div class="col-lg-6 text-right">
+        <h4>RESCATE</h4>
+        <p>ETAPA UNO</p>
+        <p>______</p>
+        <p>Rescatamos perros en situación de peligro y/o abandono. 
+          Los rehabilitamos y los preparamos para buscarles un hogar
+        </p>
+        <img class="imgRescate" src="{% static '/img/rescate.jpg' %}" alt="rescate">
+      </div>
+      <div class="col-lg-6 financiamiento">
+        <img class="imgCrowdfunding" src="{% static '/img/crowfunding.jpg' %}" alt="">
+        <h4>CROWDFUNDING</h4>
+        <p>FINANCIAMIENTO</p>
+        <p>______</p>
+        <p>
+          Sigue nuestras reder sociales para informarte acerca de las diversas
+          campañas y actividades que realizamos para obtener financiamiento
+          para seguir ayudando.
+        </p>
+        <button class="btnCampaña">CAMPAÑAS</button>
+      </div>
+    </div>
+
+
+    <section class="galeria">
+      <h4>AYUDA A NUESTROS AMIGOS</h4> 
+      <div class="container">
+          
+        <ul class="grid">
+            
+            <li>
+                  <a href="{%static '/img/rescatados/perro1.jpg' %}" data-lightbox="galeria" data-title="Boby busca dueño, tiene solo 9 meses y todas sus vacunas." data-fancybox="gallery"  >
+                      <img  src="{% static '/img/rescatados/perro1.jpg' %}" alt="">
+                      <p> Boby busca dueño, tiene solo 9 meses y todas sus vacunas.</p>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="{% static '/img/rescatados/perro2.jpg' %}" data-lightbox="galeria" data-title="Eliot perrito que tiene 2 años, busca hogar." data-fancybox="gallery">
+                      <img src="{% static '/img/rescatados/perro2.jpg' %}" alt="">
+                      <p>Eliot perrito que tiene 2 años, busca hogar.</p>
+                  </a>
+              </li>
+              <li>
+                  <a href="{% static '/img/rescatados/perro3.jpg' %}" data-lightbox="galeria" data-title="Arturo perrito encontrado hace 3 meses, busca a sus dueños." data-fancybox="gallery">
+                      <img src="{% static '/img/rescatados/perro3.jpg' %}" alt="">
+                      <p>Arturo perrito encontrado hace 3 meses, busca a sus dueños.</p>
+                  </a>
+              </li>
+              
+              <li>
+                  <a href="{% static '/img/rescatados/perro4.jpg' %}" data-lightbox="galeria" data-title="Pelusa perrita muy cariñosa, esta operada, busca hogar." data-fancybox="gallery">
+                      <img src="{% static '/img/rescatados/perro4.jpg' %}" alt="">
+                      <p>Pelusa perrita muy cariñosa, esta operada, busca hogar.</p>
+                  </a>
+              </li>
+                  <li>
+                  <a href="{% static '/img/rescatados/perro5.jpg' %}"data-lightbox="galeria" data-title="Thor es un perrito encontrado en valparaiso, busca a sus dueños" data-fancybox="gallery">
+                      <img src="{% static '/img/rescatados/perro5.jpg' %}" alt="">
+                      <p>Thor es un perrito encontrado en valparaiso, busca a sus dueños</p>
+                  </a>
+              </li>
+              
+              <li>
+                  <a href="{% static '/img/rescatados/perro6.jpg' %}" data-lightbox="galeria" data-title="Zora perrito de 3 meses, todas su vacunas, busca hogar." data-fancybox="gallery">
+                      <img src="{% static '/img/rescatados/perro6.jpg' %}" alt="">
+                      <p>Zora perrito de 3 meses, todas su vacunas, busca hogar.</p>
+                  </a>
+              </li>
+      
+      
+    
+          </ul>
+      </div>
+  </section>
+
+
+
+    <footer>
+      Desarrollo Web y Mobile
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+    <!-- <script src="{% static 'popper.js/dist/popper.min.js' %}"></script> -->
+    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
+
+
 {% endblock %}

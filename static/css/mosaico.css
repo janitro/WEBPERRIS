@@ -1,0 +1,89 @@
+
+/*
+Fuente: https://codepen.io/jlantunez/pen/JaNgwb
+*/
+
+.grid {
+    width: 96%;
+    max-width: 1500px;
+    margin: 24px auto;
+  }
+  
+  .grid li {
+    display:inline-block;
+    padding: 8px;
+    position: relative;
+    -webkit-transition: all .3s ease-in-out;
+     transition: all .3s ease-in-out;
+  }
+
+  .grid li:hover {
+  -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+  }
+
+  a {
+    color:#17f;
+    text-decoration:none;
+  }
+  
+  .grid img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-bottom: 1em;
+  }
+  
+  
+  @media screen and (min-width: 200px) {
+    .grid {
+      column-width: 200px;
+      column-count: 3;
+      column-gap: 24px;
+      margin:auto;
+    }
+
+  }
+
+
+
+
+
+  
+
+  
+
+  /*------------  Probando  ------------*/
+  /*
+  .grid  {
+    width: 100%;
+    margin: 24px auto;
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    
+  }
+
+  .grid a{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+  }
+
+
+  .grid img{
+    width: 100%;
+  }
+  */
+  

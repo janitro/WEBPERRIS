@@ -1,24 +1,32 @@
 
 
-<!DOCTYPE html>
-<html lang="es">
-    
+<!doctype html>
+<html lang="en">
     {% load pwa %}
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-      
-      {% load static %}
-      <!-- Bootstrap -->
-      <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
-      <link rel="stylesheet" href="{% static '/css/font-awesome.min.css' %}"/>
-      <link rel="stylesheet" href="{% static '/css/animate.css' %}"/>
-      <link href="{% static '/css/animate.min.css' %}" rel="stylesheet"/>
-      <link href="{% static '/css/estilo.css' %}" rel="stylesheet" />
-    <title>{% block title %}Mis perris{% endblock %}</title>
-    <title>Bootstrap Example</title>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
+     minimum-scale=1.0">
+     {% load static %}
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static '/@fortawesome/fontawesome-free/css/all.css' %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+
+    <!-- Custom JS -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="{% static 'js/region.js' %}"></script>
+    <script src="{% static 'js/lightbox.js' %}"></script>
+    <title>Mis Perris</title>
    
     {% progressive_web_app_meta %}
   </head>
@@ -34,3 +42,7 @@
     </main>
   </body>
 </html>
+
+
+
+
