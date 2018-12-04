@@ -18,6 +18,12 @@ class SignUpForm(UserCreationForm):
 
 
 class MascotasForm(forms.ModelForm):
+    Nombre = forms.CharField(widget=forms.TextInput
+    (attrs={'class':'form-control'}))
+    Raza = forms.CharField(widget=forms.TextInput
+    (attrs={'class':'form-control'}))
+    Edad = forms.IntegerField(widget=forms.NumberInput
+    (attrs={'class':'form-control'}))
 
 
     class Meta:

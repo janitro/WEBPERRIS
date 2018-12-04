@@ -1,6 +1,6 @@
-{% include 'navbar.html' %}
+{% extends 'base.html' %}
 
-
+{% block content %}
 <h1 class="display-1 text-muted">Listado de perros</h1>
 <div class="table-responsive">
 <table class="table table-bordered table"></table>
@@ -38,3 +38,4 @@
 
 </table>
 </div>
+{% endblock %}

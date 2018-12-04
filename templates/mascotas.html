@@ -1,18 +1,25 @@
 
-{% load staticfiles %}
-{% include 'navbar.html' %}
+{% extends 'base.html' %}
 
-  
+{% load staticfiles %}
+
+
+
 {% block content %}        
-          
-<form action="" method="POST" enctype="multipart/form-data">
+      
+<form   method="POST" enctype="multipart/form-data" >
     {% csrf_token %}
-    {{ form.as_p }}
+    <div class="form-group no-radius-right">
+            {{form.as_p}}
+    </div>
+    
     
     <button type="submit" >Guardar</button>
     
 </form> 
 
+
+      
 {% endblock %}
         
 

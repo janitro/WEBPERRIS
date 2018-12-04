@@ -34,21 +34,21 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('', views.home, name='home'),
     path('signup', views.signup, name='signup'),
     #path('login/$', views.login, name='login'),
     #path('logout/', auth_views.auth_logout, {'next_page': 'login'}, name='logout'),
-    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
-    path('Mascota/', views.MascotaReg, name='Mascota'),
-    path('Contacto/', views.ContactoReg, name='Contacto'),
-    path('ListarPerros/', views.ListarPerros, name='ListarPerros'),
-    url('social/', include('social_django.urls', namespace='social')),
+    path('login', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
+    path('Mascota', views.MascotaReg, name='Mascota'),
+    path('Contacto', views.ContactoReg, name='Contacto'),
+    path('ListarPerros', views.ListarPerros, name='ListarPerros'),
+    url('social', include('social_django.urls', namespace='social')),
     url ('', include ('pwa.urls')),
     # url(r'^', include(router.urls)),
     # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('Prueba/', views.Prueba, name='Prueba'),
+    path('Prueba', views.Prueba, name='Prueba'),
     
     url(r'^', include('web.urls')),
     

@@ -81,7 +81,7 @@ def ContactoReg(request):
 
 
 def ListarPerros(request):
-    response = requests.get('http://127.0.0.1:8000/Listado/')
+    response = requests.get('http://127.0.0.1:8000/Listado')
     if response.status_code == 200:
         listaperros = response.json()
         results = listaperros.get('results', [])

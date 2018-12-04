@@ -9,7 +9,7 @@ from django.conf import settings
 
 urlpatterns = [
     
-    url(r'^Listado/$', views.Listado.as_view()),
+    url(r'^Listado$', views.Listado.as_view()),
     url(r'^Listado/(?P<pk>[0-9]+)/$', views.ListadoDetail.as_view()),
     
     

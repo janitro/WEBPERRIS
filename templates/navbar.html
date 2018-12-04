@@ -5,7 +5,7 @@
     </a>
     <ul class="nav text-center top-nav-list">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Inicio</a>
+        <a class="nav-link active" href="{% url 'home' %}">Inicio</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Quienes Somos</a>
@@ -20,7 +20,7 @@
           <a class="nav-link" href="{% url 'ListarPerros' %}">Ver Mascotas</a>
         </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Registrar Perros</a>
+        <a class="nav-link" href="{% url 'Mascota' %}">Registrar Perros</a>
       </li>
       {% endif %}
     </ul>
