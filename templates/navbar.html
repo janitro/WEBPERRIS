@@ -10,17 +10,22 @@
                       <span class="icon-bar"></span>
                   </button>
         <div class="navbar-brand">
-          <a href="index.html"><h1>Day</h1></a>
+          <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
         </div>
       </div>
       <div class="navbar-collapse collapse">
         <div class="menu">
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation"><a href="index.html" class="active">Home</a></li>
-            <li role="presentation"><a href="about.html">About Us</a></li>
-            <li role="presentation"><a href="services.html">Services</a></li>
-            <li role="presentation"><a href="gallery.html">Gallery</a></li>
+            <li role="presentation"><a href="{% url 'home' %}" class="active">Inicio</a></li>
+            <li role="presentation"><a href="about.html">Quienes Somos</a></li>
             <li role="presentation"><a href="contact.html">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li role="presentation"><a href="contact.html">Adoptar</a></li>
+            {% endif %}
+            {% if user.is_superuser %}
+            <li role="presentation"><a href="contact.html">Registrar Mascota</a></li>
+            <li role="presentation"><a href="contact.html">Ver Perros</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
