@@ -192,7 +192,7 @@ SOCIAL_AUTH_FACEBOOK_SECRET = 'ba03d86b751d951281a5df0d8c6f701e'
 
 
 #PWA
-PWA_APP_NAME = 'Mis Perris'
+PWA_APP_NAME = 'MisPerris'
 PWA_APP_DESCRIPTION = "Aplicacion Para Duoc UC"
 PWA_APP_THEME_COLOR = '#0A0302'
 PWA_APP_BACKGROUND_COLOR = '#ffffff'
@@ -201,7 +201,7 @@ PWA_APP_START_URL = '/'
 PWA_APP_ICONS = [
     {
         'src': '/static/images/misperris.png',
-        'sizes': '160x160'
+        'sizes': '512x512'
     }
 ]
 PWA_APP_DIR  =  ' ltr '
