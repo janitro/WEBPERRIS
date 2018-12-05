@@ -50,4 +50,97 @@
   </nav>
 
 
+  {% extends 'base.html' %}
+{% load static %}
+<body background="{% static 'images/perrosfondo.jpg' %}" >
+{% block content %}
+<h1 class="display-1 text-muted">Listado de perros</h1>
+<div class="table-responsive">
+<table class="table table-bordered table"></table>
+<thead class="thead-dark">
+   
+   
+    <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                        {% for results in results %}
+                        <div class="post">
+                            <div class="date">
+                                <p>EStado Actual: {{ results.Estado }}</p>
+                            </div>
+                            <h1><a href=""> Nombre: {{results.Nombre}}</a></h1>
+                            <p> Raza: {{ results.Raza|linebreaksbr }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    
+
+
+
+</table>
+</div>
+</body>
+{% endblock %}
+{% load static %}
+
+<link rel="stylesheet" href= "{% static 'css/marco.css' %}">
+{% include 'base.html' %}
+
+
+<body background="{% static 'images/perrosfondo.jpg' %}" >
+<div class="container registro">
+{% block content %}
+<h2>Registro</h2>
+  {% load widget_tweaks %}
+  {% for results in results %}
+ 
   
+  
+  
+  <li> <th>Nombre:</th>  {{results.Nombre}}</li>
+  <li> <th>Raza: </th>  {{results.Raza}}</li>
+  <li> <th>Raza: </th>  {{results.Edad}} años</li>
+  <li> <th>Raza: </th>  {{results.Estado}}</li>
+  <li> <th>Raza: </th>  {{results.Descripcion}}</li>
+
+  <th>Foto:<img src="{{results.Foto}}" alt="Trulli" width="500" height="333"></th>
+
+  {% endfor %}
+</div>
+{% endblock %}
+</body>
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="display-1 text-muted">Listado de perros</h1>
+<div class="table-responsive">
+<table class="table table-bordered table"></table>
+<thead class="thead-dark">
+        <tr>
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Edad</th>
+        <th>Estado</th>
+        <th>Descripcion</th>
+        <th>Foto</th>
+    </tr>
+    </thead>
+    {% for results in results %}
+    <li> <th>Nombre:</th>  {{results.Nombre}}</li>
+    <li> <th>Raza: </th>  {{results.Raza}}</li>
+
+    <th>Foto:<img src="{{results.Foto}}" alt="Trulli" width="500" height="333"></th>
+    
+    {% endfor %}
+   
+ 
+    
+
+
+
+</table>
+</div>
+{% endblock %}

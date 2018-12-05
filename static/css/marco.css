@@ -1,0 +1,19 @@
+.bordes {
+  background-color: #fafafa;
+  border: 10px solid #ccc;
+  padding: 20px;
+  margin: auto;
+  width: 300px;
+  }
+
+  .registro{
+
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 0 auto;
+    width: 450px;
+    text-align: center;
+   
+
+  }

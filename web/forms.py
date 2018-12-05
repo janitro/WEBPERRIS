@@ -24,6 +24,11 @@ class MascotasForm(forms.ModelForm):
     (attrs={'class':'form-control'}))
     Edad = forms.IntegerField(widget=forms.NumberInput
     (attrs={'class':'form-control'}))
+    
+    Descripcion = forms.CharField(widget=forms.TextInput
+    (attrs={'class':'form-control'}))
+   
+
 
 
     class Meta:

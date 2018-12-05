@@ -1,41 +1,28 @@
-{% extends 'base.html' %}
+{% load static %}
 
+<link rel="stylesheet" href= "{% static 'css/marco.css' %}">
+{% include 'base.html' %}
+
+
+<body background="{% static 'images/perrosfondo.jpg' %}" >
+<div class="container registro">
 {% block content %}
-<h1 class="display-1 text-muted">Listado de perros</h1>
-<div class="table-responsive">
-<table class="table table-bordered table"></table>
-<thead class="thead-dark">
-        <tr>
-        <th>Nombre</th>
-        <th>Raza</th>
-        <th>Edad</th>
-        <th>Estado</th>
-        <th>Descripcion</th>
-        <th>Foto</th>
-    </tr>
-    </thead>
-    {% for results in results %}
-    <li>   {{results.Nombre}}</li>
-    <li>   {{results.Raza}}</li>
-
-    <img src="{{results.Foto}}" alt="Trulli" width="500" height="333">
-    {% endfor %}
-   
+<h2>Registro</h2>
+  {% load widget_tweaks %}
+  {% for results in results %}
  
-    
+  
+  
+  
+  <li> <th>Nombre:</th>  {{results.Nombre}}</li>
+  <li> <th>Raza: </th>  {{results.Raza}}</li>
+  <li> <th>Edad: </th>  {{results.Edad}} Años</li>
+  <li> <th>Estado: </th>  {{results.Estado}}</li>
+  <li> <th>Descripcion: </th>  {{results.Descripcion}}</li>
 
-<!-- <tr>
-    <br><td>{{Nombre}}</td></br>
-    <td>{{Raza}}</td>
-    <td>{{Edad}}</td>
-    <td>{{Estado}}</td>
-    <td>{{Descripcion}}</td>
-    
-          
-    <img src="{{Foto}}">
-    
-</tr> -->
+  <th>Foto:<img src="{{results.Foto}}" alt="Trulli" width="200" height="166"></th>
 
-</table>
+  {% endfor %}
 </div>
 {% endblock %}
+</body>

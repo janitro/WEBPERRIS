@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'social_django',
     'sslserver',
     'pwa',
+    'widget_tweaks',
     
 ]
 
@@ -203,5 +204,7 @@ PWA_APP_ICONS = [
         'sizes': '160x160'
     }
 ]
+PWA_APP_DIR  =  ' ltr '
+PWA_APP_LANG  =  ' en-es '
 
 
